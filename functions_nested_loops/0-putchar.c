@@ -1,13 +1,21 @@
 #include "main.h"
 
 /**
- * _putchar - writes char c to stdout
- * @c: parameter and character to print
+ * main - Entry point
  *
- * Return: 1 on success
- * Error: -1 on error
+ * Return: Always 0 (Success)
  */
-int _putchar(char c)
+int main(void)
 {
-	return (write(1, &c, sizeof(c)));
+	_putchar('_');
+	_putchar('p');
+	_putchar('u');
+	_putchar('t');
+	_putchar('c');
+	_putchar('h');
+	_putchar('a');
+	_putchar('r');
+	_putchar('\n');
+
+	return (0);
 }
