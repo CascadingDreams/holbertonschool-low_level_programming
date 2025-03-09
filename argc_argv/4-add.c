@@ -28,23 +28,24 @@ int is_number(char *str)
  */
 int main(int argc, char *argv[])
 {
-	int first_num, second_num, sum;
+	int i;
+	int sum = 0;
 
-	if (argc < 3)
+	if (argc == 1)
 	{
 		printf("0\n");
 		return (0);
 	}
 
-	if (!is_number(argv[1]) || !is_number(argv[2]))
+	for(i = 1; i < argc; i++)
 	{
-		printf("Error\n");
-		return (1);
+		if (!is_number(argv[i]))
+		{
+			printf("Error\n");
+			return (1);
+		}
+		sum = sum + atoi(argv[i]);
 	}
-
-	first_num = atoi(argv[1]);
-	second_num = atoi(argv[2]);
-	sum = first_num + second_num;
 
 	printf("%d\n", sum);
 	return (0);
