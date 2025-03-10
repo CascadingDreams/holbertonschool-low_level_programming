@@ -35,14 +35,17 @@ char *_strdup(char *str)
 	}
 
 	strlen = _strlen(str);
-	a = malloc(sizeof(char) * strlen + 1);
+	a = (char *)malloc(sizeof(char) * strlen + 1);
+	if (a == NULL)
+	{
+		return (NULL);
+	}
 
 	for (i = 0; i < strlen; i++)
 	{
 		a[i] = str[i];
 	}
 	a[i] = '\0';
-	
-	free(a);
+
 	return (a);
 }
