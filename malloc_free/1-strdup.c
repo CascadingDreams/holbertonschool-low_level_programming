@@ -29,16 +29,19 @@ char *_strdup(char *str)
 	char *a;
 	int strlen;
 
-	strlen = _strlen(str);
-	a = malloc(sizeof(char) * strlen);
-
-	if (a == NULL)
+	if (str == NULL)
 	{
 		return (NULL);
 	}
+
+	strlen = _strlen(str);
+	a = malloc(sizeof(char) * strlen + 1);
+
 	for (i = 0; i < strlen; i++)
 	{
 		a[i] = str[i];
 	}
+	a[i] = '\0';
+
 	return (a);
 }
