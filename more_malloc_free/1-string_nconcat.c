@@ -50,7 +50,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		n = lens2;
 	}
 
-	concatstr = malloc(lens1 + n + 1);
+	concatstr = malloc(sizeof(char) *(lens1 + n + 1));
 	if (concatstr == NULL)
 	{
 		return (NULL);
