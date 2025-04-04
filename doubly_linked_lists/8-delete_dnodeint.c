@@ -26,9 +26,6 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	{
 		return (-1);
 	}
-
-	printf("Deleting node at index %u with value = %d\n", index, current_node->n);
-
 	if (current_node->prev == NULL)
 	{
 		*head = current_node->next;
