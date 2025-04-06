@@ -2,12 +2,25 @@
 
 #define BUFFER_SIZE 1024
 
+/**
+ * print_error - Prints an error message and exits with the given code.
+ * @code: The exit code.
+ * @format: The error message format.
+ * @arg: The argument to insert in the format string.
+ */
 void print_error(int code, const char *format, const char *arg)
 {
 	dprintf(STDERR_FILENO, format, arg);
 	exit(code);
 }
 
+/**
+ * main - Copies the content of a file to another file.
+ * @argc: Argument count.
+ * @argv: Argument vector.
+ *
+ * Return: 0 on success, exits on error.
+ */
 int main(int argc, char *argv[])
 {
 	int fd_from, fd_to, rd, wr;
@@ -30,7 +43,6 @@ int main(int argc, char *argv[])
 		if (wr != rd)
 			print_error(99, "Error: Can't write to %s\n", argv[2]);
 	}
-
 	if (rd == -1)
 		print_error(98, "Error: Can't read from file %s\n", argv[1]);
 
