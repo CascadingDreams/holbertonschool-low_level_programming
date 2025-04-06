@@ -32,7 +32,7 @@ void close_file(int fd, int fd_value)
  * copy_file - Copies the content of one file to another.
  * @fd_from: The source file descriptor.
  * @fd_to: The destination file descriptor.
- * @argv: The command-line arguments.
+ * @argv: The command-line arguments (for error reporting).
  */
 void copy_file(int fd_from, int fd_to, char *argv[])
 {
@@ -42,6 +42,7 @@ void copy_file(int fd_from, int fd_to, char *argv[])
 	while ((rd = read(fd_from, buffer, BUFFER_SIZE)) > 0)
 	{
 		wr = write(fd_to, buffer, rd);
+
 		if (wr == -1 || wr != rd)
 		{
 			close_file(fd_from, fd_from);
