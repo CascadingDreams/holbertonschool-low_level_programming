@@ -3,7 +3,7 @@
 #define BUFFER_SIZE 1024
 
 /**
- * print_error - Prints an error message and exits with given code.
+ * print_error - Prints an error message and exits with the given code.
  * @code: The exit code.
  * @format: The error message format.
  * @arg: The argument to insert in the format string.
@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
 	char buffer[BUFFER_SIZE];
 
 	if (argc != 3)
-		print_error(97, "Usage: %s file_from file_to\n", argv[0]);
+		print_error(97, "Usage: cp file_from file_to\n", argv[0]);
 
 	fd_from = open(argv[1], O_RDONLY);
 	if (fd_from == -1)
