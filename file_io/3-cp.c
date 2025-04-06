@@ -49,6 +49,7 @@ void copy_file(int fd_from, int fd_to, char *argv[])
 			print_error(99, "Error: Can't write to %s\n", argv[2]);
 		}
 	}
+
 	if (rd == -1)
 	{
 		close_file(fd_from, fd_from);
